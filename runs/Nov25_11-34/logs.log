@@ -1,0 +1,215 @@
+[00:00] Using device: cuda
+[00:00] Loading CIFAR10 dataset...
+[00:04] Extracting training features...
+[00:08] Extracting testing features...
+[00:09] 
+-- Training Gaussian Naive Bayes models --
+[00:09] >> Cleared custom_gnb model for retraining
+[00:09] Training custom Gaussian Naive Bayes...
+[00:09] >> Custom GNB training time: 0.00 seconds
+[00:09] >> Saved custom_gnb model to models\custom_gnb.pkl
+[00:09] >> Cleared sklearn_gnb model for retraining
+[00:09] Training Scikit-learn Gaussian Naive Bayes...
+[00:09] >> Saved sklearn_gnb model to models\sklearn_gnb.pkl
+[00:09] 
+-- Training Decision Tree models --
+[00:09] >> Cleared custom_dt model for retraining
+[00:09] Training custom Decision Tree...
+[01:18] >> Custom Decision Tree training time: 68.30 seconds
+[01:18] >> Saved custom_dt model to models\custom_dt.pkl
+[01:18] >> Cleared sklearn_dt model for retraining
+[01:18] Training Scikit-learn Decision Tree...
+[01:18] >> Saved sklearn_dt model to models\sklearn_dt.pkl
+[01:18] 
+-- Training Multi-Layer Perceptron model --
+[01:18] >> Cleared mlp model for retraining
+[01:18] Training Multi-Layer Perceptron...
+[01:18] Epoch [10/100], Loss: 1.1222, Test Accuracy: 0.6820
+[01:18] Epoch [20/100], Loss: 0.6526, Test Accuracy: 0.7690
+[01:18] Epoch [30/100], Loss: 0.5347, Test Accuracy: 0.7910
+[01:18] Epoch [40/100], Loss: 0.4744, Test Accuracy: 0.8040
+[01:18] Epoch [50/100], Loss: 0.4339, Test Accuracy: 0.8150
+[01:18] Epoch [60/100], Loss: 0.4029, Test Accuracy: 0.8280
+[01:18] Epoch [70/100], Loss: 0.3780, Test Accuracy: 0.8310
+[01:18] Epoch [80/100], Loss: 0.3569, Test Accuracy: 0.8420
+[01:18] Epoch [90/100], Loss: 0.3385, Test Accuracy: 0.8410
+[01:18] Epoch [100/100], Loss: 0.3218, Test Accuracy: 0.8400
+[01:18] >> MLP training time: 0.42 seconds
+[01:18] >> Saved mlp model to models\mlp.pkl
+[01:18] >> Saved mlp training history to models\mlp_history.pkl
+[01:18] 
+-- Training Convolutional Neural Network (VGG11) model --
+[01:18] >> Cleared cnn model for retraining
+[01:18] Training CNN...
+[19:45] >> CNN training time: 1106.38 seconds
+[19:45] >> Saved cnn model to models\cnn.pkl
+[19:45] >> Saved cnn training history to models\cnn_history.pkl
+[19:47] 
+[19:47] Evaluating GNB models...
+[19:47] Evaluating Decision Tree models...
+[19:47] Evaluating MLP model...
+[19:47] Evaluating CNN model...
+[19:47] 
+Evaluation Metrics:
+--------------------------------------------------------------------------------
+Algorithm                Accuracy    Precision       Recall           F1
+--------------------------------------------------------------------------------
+Gaussian Naive Bayes        0.779        0.783        0.779        0.778
+Scikit GNB                  0.779        0.783        0.779        0.778
+Decision Tree               0.585        0.586        0.585        0.585
+Scikit Decision Tree        0.577        0.581        0.577        0.578
+MLP                         0.840        0.842        0.840        0.840
+CNN                         0.715        0.712        0.715        0.712
+--------------------------------------------------------------------------------
+[19:47] Saved model metrics to runs\Nov25_11-34\metrics.txt
+[19:47] 
+-- Analyzing Decision Tree depth variations --
+[19:47] Starting decision tree depth analysis...
+[25:24] Depth analysis complete!
+[25:24] 
+Decision Tree Depth Analysis:
+--------------------------------------------------------------------------------
+Depth     Train Acc   Test Acc  Precision     Recall         F1
+--------------------------------------------------------------------------------
+1             0.197      0.197      0.043      0.197      0.070
+2             0.327      0.321      0.147      0.321      0.196
+5             0.619      0.567      0.595      0.567      0.558
+10            0.887      0.595      0.601      0.595      0.596
+20            1.000      0.585      0.586      0.585      0.585
+50            1.000      0.585      0.586      0.585      0.585
+100           1.000      0.585      0.586      0.585      0.585
+--------------------------------------------------------------------------------
+[25:24] Saved DT depth analysis metrics to runs\Nov25_11-34\dt_depth_metrics.txt
+[25:24] Saved depth analysis plot to runs\Nov25_11-34
+[25:24] 
+-- Analyzing MLP depth variations --
+[25:24] Starting MLP depth analysis on 6 models...
+[25:24] Epoch [10/100], Loss: 1.2932, Test Accuracy: 0.6710
+[25:24] Epoch [20/100], Loss: 0.7337, Test Accuracy: 0.7570
+[25:24] Epoch [30/100], Loss: 0.6016, Test Accuracy: 0.7780
+[25:24] Epoch [40/100], Loss: 0.5445, Test Accuracy: 0.7930
+[25:24] Epoch [50/100], Loss: 0.5093, Test Accuracy: 0.7970
+[25:24] Epoch [60/100], Loss: 0.4845, Test Accuracy: 0.8110
+[25:24] Epoch [70/100], Loss: 0.4656, Test Accuracy: 0.8170
+[25:24] Epoch [80/100], Loss: 0.4503, Test Accuracy: 0.8190
+[25:24] Epoch [90/100], Loss: 0.4375, Test Accuracy: 0.8190
+[25:24] Epoch [100/100], Loss: 0.4265, Test Accuracy: 0.8230
+[25:24] Depth 1: Loss: 0.8596, Test Accuracy: 0.8230
+[25:24] Epoch [10/100], Loss: 1.1303, Test Accuracy: 0.6890
+[25:24] Epoch [20/100], Loss: 0.6678, Test Accuracy: 0.7700
+[25:24] Epoch [30/100], Loss: 0.5435, Test Accuracy: 0.8020
+[25:24] Epoch [40/100], Loss: 0.4805, Test Accuracy: 0.8060
+[25:24] Epoch [50/100], Loss: 0.4395, Test Accuracy: 0.8190
+[25:24] Epoch [60/100], Loss: 0.4087, Test Accuracy: 0.8270
+[25:24] Epoch [70/100], Loss: 0.3839, Test Accuracy: 0.8290
+[25:24] Epoch [80/100], Loss: 0.3630, Test Accuracy: 0.8340
+[25:25] Epoch [90/100], Loss: 0.3447, Test Accuracy: 0.8350
+[25:25] Epoch [100/100], Loss: 0.3281, Test Accuracy: 0.8370
+[25:25] Depth 2: Loss: 0.8984, Test Accuracy: 0.8370
+[25:25] Epoch [10/100], Loss: 1.0503, Test Accuracy: 0.7230
+[25:25] Epoch [20/100], Loss: 0.6027, Test Accuracy: 0.7690
+[25:25] Epoch [30/100], Loss: 0.4770, Test Accuracy: 0.8020
+[25:25] Epoch [40/100], Loss: 0.4068, Test Accuracy: 0.8110
+[25:25] Epoch [50/100], Loss: 0.3566, Test Accuracy: 0.8170
+[25:25] Epoch [60/100], Loss: 0.3170, Test Accuracy: 0.8220
+[25:25] Epoch [70/100], Loss: 0.2840, Test Accuracy: 0.8240
+[25:25] Epoch [80/100], Loss: 0.2550, Test Accuracy: 0.8250
+[25:25] Epoch [90/100], Loss: 0.2289, Test Accuracy: 0.8250
+[25:25] Epoch [100/100], Loss: 0.2051, Test Accuracy: 0.8240
+[25:25] Depth 3: Loss: 0.9480, Test Accuracy: 0.8240
+[25:25] Epoch [10/100], Loss: 1.0341, Test Accuracy: 0.7230
+[25:25] Epoch [20/100], Loss: 0.5790, Test Accuracy: 0.7700
+[25:25] Epoch [30/100], Loss: 0.4371, Test Accuracy: 0.8140
+[25:25] Epoch [40/100], Loss: 0.3521, Test Accuracy: 0.8210
+[25:25] Epoch [50/100], Loss: 0.2889, Test Accuracy: 0.8320
+[25:25] Epoch [60/100], Loss: 0.2391, Test Accuracy: 0.8320
+[25:25] Epoch [70/100], Loss: 0.1973, Test Accuracy: 0.8330
+[25:25] Epoch [80/100], Loss: 0.1618, Test Accuracy: 0.8380
+[25:25] Epoch [90/100], Loss: 0.1318, Test Accuracy: 0.8370
+[25:25] Epoch [100/100], Loss: 0.1068, Test Accuracy: 0.8320
+[25:25] Depth 4: Loss: 0.9854, Test Accuracy: 0.8320
+[25:25] Epoch [10/100], Loss: 1.1081, Test Accuracy: 0.5400
+[25:25] Epoch [20/100], Loss: 0.5810, Test Accuracy: 0.7510
+[25:25] Epoch [30/100], Loss: 0.4077, Test Accuracy: 0.8020
+[25:25] Epoch [40/100], Loss: 0.3019, Test Accuracy: 0.8220
+[25:25] Epoch [50/100], Loss: 0.2227, Test Accuracy: 0.8300
+[25:25] Epoch [60/100], Loss: 0.1616, Test Accuracy: 0.8320
+[25:25] Epoch [70/100], Loss: 0.1150, Test Accuracy: 0.8330
+[25:25] Epoch [80/100], Loss: 0.0813, Test Accuracy: 0.8350
+[25:25] Epoch [90/100], Loss: 0.0581, Test Accuracy: 0.8350
+[25:25] Epoch [100/100], Loss: 0.0426, Test Accuracy: 0.8360
+[25:25] Depth 5: Loss: 0.9990, Test Accuracy: 0.8360
+[25:25] Epoch [10/100], Loss: 1.1101, Test Accuracy: 0.4590
+[25:25] Epoch [20/100], Loss: 0.5500, Test Accuracy: 0.7210
+[25:25] Epoch [30/100], Loss: 0.3607, Test Accuracy: 0.7890
+[25:25] Epoch [40/100], Loss: 0.2391, Test Accuracy: 0.8080
+[25:26] Epoch [50/100], Loss: 0.1546, Test Accuracy: 0.8150
+[25:26] Epoch [60/100], Loss: 0.0972, Test Accuracy: 0.8090
+[25:26] Epoch [70/100], Loss: 0.0610, Test Accuracy: 0.8060
+[25:26] Epoch [80/100], Loss: 0.0397, Test Accuracy: 0.8030
+[25:26] Epoch [90/100], Loss: 0.0275, Test Accuracy: 0.8020
+[25:26] Epoch [100/100], Loss: 0.0204, Test Accuracy: 0.8030
+[25:26] Depth 6: Loss: 1.0000, Test Accuracy: 0.8030
+[25:26] Depth analysis complete!
+[25:26] 
+MLP Depth Analysis:
+--------------------------------------------------------------------------------
+Layers    Train Acc   Test Acc  Precision     Recall         F1
+--------------------------------------------------------------------------------
+1             0.860      0.823      0.825      0.823      0.823
+2             0.898      0.837      0.841      0.837      0.837
+3             0.948      0.824      0.829      0.824      0.825
+4             0.985      0.832      0.835      0.832      0.833
+5             0.999      0.836      0.837      0.836      0.836
+6             1.000      0.803      0.806      0.803      0.803
+--------------------------------------------------------------------------------
+[25:26] Saved depth analysis metrics to runs\Nov25_11-34\mlp_depth_metrics.txt
+[25:26] Saved depth analysis plot to runs\Nov25_11-34
+[25:26] Analyzing CNN depth variations...
+[25:26] Starting CNN depth analysis...
+[27:29] Depth 2: Accuracy: 45.30%, Time: 122.33s
+[30:26] Depth 4: Accuracy: 51.00%, Time: 177.15s
+[34:07] Depth 6: Accuracy: 54.70%, Time: 221.38s
+[38:00] Depth 8: Accuracy: 52.60%, Time: 233.03s
+[41:58] Depth 10: Accuracy: 53.90%, Time: 237.67s
+[41:58] Depth analysis complete!
+[41:58] Analyzing CNN kernel size variations...
+[41:58] Starting CNN kernel size analysis...
+[56:19] Kernel 2x2: Accuracy: 50.90%, Time: 860.93s
+[1:01:11] Kernel 3x3: Accuracy: 56.10%, Time: 292.39s
+[1:09:24] Kernel 5x5: Accuracy: 55.30%, Time: 493.06s
+[1:40:34] Kernel 7x7: Accuracy: 50.40%, Time: 1869.45s
+[1:40:34] Kernel size analysis complete!
+[1:40:34] 
+CNN Depth Analysis Results:
+------------------------------------------------------------
+Depth       Accuracy (%)   Time (s)   
+------------------------------------------------------------
+2                    45.30      122.33
+4                    51.00      177.15
+6                    54.70      221.38
+8                    52.60      233.03
+10                   53.90      237.67
+------------------------------------------------------------
+Change:               8.60      115.35
+------------------------------------------------------------
+[1:40:34] Saved depth analysis metrics to runs\Nov25_11-34\cnn_depth_metrics.txt
+[1:40:34] 
+
+CNN Kernel Size Analysis Results:
+------------------------------------------------------------
+Kernel Size Accuracy (%)   Time (s)   
+------------------------------------------------------------
+2x2                  50.90      860.93
+3x3                  56.10      292.39
+5x5                  55.30      493.06
+7x7                  50.40     1869.45
+------------------------------------------------------------
+Change:              -0.50     1008.52
+------------------------------------------------------------
+[1:40:34] Saved kernel size analysis metrics to runs\Nov25_11-34\kernel_size_metrics.txt
+[1:40:34] Saved depth analysis plot to runs\Nov25_11-34
+[1:40:34] Saved kernel size analysis plot to runs\Nov25_11-34
+[1:40:35] Loading MLP training metrics...
+[1:40:35] Loading CNN training metrics...
+[1:41:55] Done
