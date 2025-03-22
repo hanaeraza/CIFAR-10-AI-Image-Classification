@@ -1,6 +1,6 @@
-# CIFAR-10 Image Classification
+# CIFAR-10 AI Image Classification
 
-This project implements image classification on the CIFAR-10 dataset using Naive Bayes, Decision Tree, Multi-Layer Perceptron (MLP), and Convolutional Neural Network (CNN) models in Python and PyTorch. The models are evaluated using confusion matrix, accuracy, precision, recall, and f1-measure metrics.
+This project implements image classification on the CIFAR-10 dataset using Naive Bayes, Decision Tree, Multi-Layer Perceptron (MLP), and Convolutional Neural Network (CNN) models in Python and PyTorch. The models are evaluated using confusion matrix, accuracy, precision, recall, and f1-measure metrics. This project was developed for the course COMP 472. 
 
 ## Project Files
 
